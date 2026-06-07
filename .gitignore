@@ -1,0 +1,17 @@
+# Dépendances installées par npm (ne se versionnent jamais)
+node_modules
+
+# Dossier généré par "npm run build"
+dist
+
+# Fichiers système / éditeur
+.DS_Store
+*.local
+.vscode/*
+!.vscode/extensions.json
+
+# Logs
+npm-debug.log*
+
+# Fichiers temporaires générés par Vite
+*.timestamp-*.mjs

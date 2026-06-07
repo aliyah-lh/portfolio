@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- lang="fr" : indique aux navigateurs et aux lecteurs d'écran que la page est en français (accessibilité + SEO) -->
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- viewport : indispensable pour le responsive (adapte la largeur à l'écran) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ===== SEO ===== -->
+    <title>Aliyah Lavallée — Intégratrice web & Front-End React à Paris</title>
+    <meta
+      name="description"
+      content="Intégratrice web junior à Paris, spécialisée en intégration responsive, accessibilité et React. Découvrez mes projets Ohmyfood et ArgentBank."
+    />
+
+    <!-- Favicon (petite icône d'onglet) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- ===== Open Graph (aperçu lors du partage sur LinkedIn) ===== -->
+    <meta property="og:title" content="Portfolio d'Aliyah Lavallée — Intégratrice web" />
+    <meta property="og:description" content="Intégratrice web orientée UI/UX. Projets, compétences et parcours." />
+    <meta property="og:type" content="website" />
+
+    <!-- ===== Polices Google : Poppins (titres) + Inter (texte) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- React va injecter toute l'application à l'intérieur de cette div -->
+    <div id="root"></div>
+
+    <!-- Point d'entrée JavaScript de l'application -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
