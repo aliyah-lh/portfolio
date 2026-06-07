@@ -1,0 +1,24 @@
+// ============================================================
+// main.scss - Le fichier de styles principal
+// Il rassemble (@use) tous les morceaux de Sass dans le bon ordre.
+// C'est ce fichier qui est importé dans main.jsx.
+//
+// Organisation des styles (architecture Sass en "partials") :
+//   _variables  -> les valeurs du design system
+//   _mixins     -> les raccourcis (responsive, container...)
+//   _base       -> reset + styles globaux
+//   _buttons    -> les boutons
+//   _header     -> l'en-tête / navigation
+//   _sections   -> Hero, About, Skills, Timeline, Contact
+//   _projects   -> la section Projets + filtres
+//   _footer     -> le pied de page
+// ============================================================
+
+@use 'variables';
+@use 'mixins';
+@use 'base';
+@use 'buttons';
+@use 'header';
+@use 'sections';
+@use 'projects';
+@use 'footer';

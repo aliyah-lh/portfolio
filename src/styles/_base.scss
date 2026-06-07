@@ -1,0 +1,111 @@
+// ============================================================
+// _base.scss - Styles de base (reset + réglages globaux)
+// On remet à zéro les styles par défaut du navigateur et on
+// définit les styles généraux : police, couleurs, titres, liens.
+// ============================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ----- Petit reset : enlève marges par défaut et gère la box -----
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; // la largeur inclut padding+bordure (plus simple à gérer)
+}
+
+html {
+  scroll-behavior: smooth;   // défilement doux quand on clique sur une ancre du menu
+  scroll-padding-top: 80px;  // décale l'ancre pour ne pas passer sous le header fixe
+}
+
+body {
+  font-family: $font-body;
+  color: $color-ink;
+  background-color: $color-bg;
+  line-height: 1.6;
+}
+
+// ----- Titres -----
+h1, h2, h3 {
+  font-family: $font-title;
+  line-height: 1.2;
+  color: $color-ink;
+}
+
+h1 { font-size: 2rem; }    // agrandi sur desktop plus bas
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+@include respond('desktop') {
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2rem; }
+}
+
+// ----- Liens -----
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover { color: $color-primary-dark; }
+}
+
+// ----- Images responsives -----
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// ----- Accessibilité : focus visible au clavier -----
+// Quand on navigue au clavier (Tab), un contour clair apparaît.
+:focus-visible {
+  outline: 3px solid $color-primary;
+  outline-offset: 2px;
+}
+
+// ----- Classe utilitaire : texte visible uniquement par les lecteurs d'écran -----
+// Sert à donner un titre/contexte aux technologies d'assistance sans l'afficher.
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// ----- Respect des utilisateurs sensibles aux animations -----
+// Si la personne a réglé son système sur "réduire les animations",
+// on désactive les transitions/animations (bonne pratique d'accessibilité).
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// ----- Titre de section réutilisable -----
+.section-title {
+  text-align: center;
+  margin-bottom: $space-xl;
+
+  span {
+    display: block;
+    color: $color-primary;
+    font-family: $font-body;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: $space-xs;
+  }
+}

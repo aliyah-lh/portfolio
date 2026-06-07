@@ -1,0 +1,30 @@
+// ============================================================
+// _mixins.scss - Des "raccourcis" de styles réutilisables
+// Un mixin, c'est un bloc de CSS qu'on peut appeler avec @include
+// pour éviter de réécrire le même code plusieurs fois.
+// ============================================================
+
+@use 'variables' as *;
+
+// Mixin "responsive" : permet d'écrire facilement des media queries.
+// Exemple d'utilisation :  @include respond('tablet') { ... }
+@mixin respond($breakpoint) {
+  @if $breakpoint == 'tablet' {
+    @media (min-width: $tablet) { @content; }
+  } @else if $breakpoint == 'desktop' {
+    @media (min-width: $desktop) { @content; }
+  }
+}
+
+// Mixin "container" : centre le contenu et limite sa largeur.
+@mixin container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $space-md;
+}
+
+// Mixin "section" : l'espacement vertical standard d'une section.
+@mixin section-spacing {
+  padding: $space-xxl 0;
+}

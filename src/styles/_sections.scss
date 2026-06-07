@@ -1,0 +1,149 @@
+// ============================================================
+// _sections.scss - Styles des sections : Hero, About, Skills,
+// Timeline, Contact (les projets ont leur propre fichier).
+// ============================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ----- HERO (accueil) -----
+.hero {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // Espace compact : on tient compte du header fixe (70px) sans laisser un grand vide
+  padding-top: 130px;
+  padding-bottom: $space-xxl;
+
+  @include respond('desktop') {
+    min-height: 70vh; // un peu plus généreux sur grand écran, mais sans excès
+  }
+
+  &__eyebrow {
+    color: $color-primary;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: $space-sm;
+  }
+
+  &__title { margin-bottom: $space-md; }
+  &__title span { color: $color-primary; } // met "UI/UX" en indigo
+
+  &__text {
+    color: $color-slate;
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin-bottom: $space-lg;
+  }
+
+  &__actions { display: flex; gap: $space-sm; flex-wrap: wrap; }
+}
+
+// ----- Bloc de section générique (fond alterné) -----
+.section {
+  @include section-spacing;
+
+  &--alt { background-color: $color-bg-alt; } // fond légèrement gris
+
+  &__inner { @include container; }
+}
+
+// ----- ABOUT (à propos) -----
+.about__text {
+  max-width: 760px;
+  margin: 0 auto;
+  color: $color-slate;
+  font-size: 1.0625rem;
+
+  p { margin-bottom: $space-md; }
+}
+
+// ----- SKILLS (compétences) -----
+.skills__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-md;
+
+  @include respond('tablet') {
+    grid-template-columns: 1fr 1fr; // 2 colonnes : techniques / humaines
+  }
+}
+
+.skill-card {
+  background-color: #fff;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  padding: $space-lg;
+  box-shadow: $shadow-card;
+
+  h3 { margin-bottom: $space-md; }
+
+  ul { list-style: none; display: flex; flex-wrap: wrap; gap: $space-xs; }
+
+  li {
+    background-color: $color-bg-alt;
+    color: $color-ink;
+    padding: $space-xs $space-sm;
+    border-radius: 999px; // pastille arrondie
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
+
+// ----- TIMELINE (parcours) -----
+.timeline {
+  max-width: 720px;
+  margin: 0 auto;
+  border-left: 2px solid $color-border;
+  padding-left: $space-lg;
+
+  &__item { position: relative; padding-bottom: $space-lg; }
+
+  // Petit point indigo sur la ligne
+  &__item::before {
+    content: '';
+    position: absolute;
+    left: calc(-#{$space-lg} - 6px);
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $color-primary;
+  }
+
+  &__date { color: $color-primary; font-weight: 600; font-size: 0.9rem; }
+  &__title { margin: $space-xs 0; }
+  &__desc { color: $color-slate; }
+}
+
+// ----- CONTACT -----
+.contact {
+  text-align: center;
+
+  &__text { color: $color-slate; max-width: 500px; margin: 0 auto $space-lg; }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    gap: $space-md;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-xs;
+    font-weight: 600;
+    padding: $space-sm $space-md;
+    border: 1px solid $color-border;
+    border-radius: $radius;
+    color: $color-ink;
+    background-color: #fff;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+
+    &:hover { border-color: $color-primary; transform: translateY(-2px); }
+  }
+}

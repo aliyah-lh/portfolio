@@ -1,0 +1,123 @@
+// ============================================================
+// _projects.scss - La section Projets et son système de filtres
+// ============================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ----- Boutons de filtre -----
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $space-xs;
+  margin-bottom: $space-xl;
+
+  &__btn {
+    font-family: $font-body;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: $space-xs $space-md;
+    border-radius: 999px;
+    border: 1px solid $color-border;
+    background-color: #fff;
+    color: $color-slate;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover { border-color: $color-primary; color: $color-primary; }
+
+    // Le filtre actif est mis en indigo
+    &--active {
+      background-color: $color-primary;
+      border-color: $color-primary;
+      color: #fff;
+    }
+  }
+}
+
+// ----- Grille de cartes projet -----
+.projects__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @include respond('tablet') {
+    grid-template-columns: 1fr 1fr; // 2 colonnes
+  }
+}
+
+// ----- Carte projet -----
+.project-card {
+  background-color: #fff;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  overflow: hidden;
+  box-shadow: $shadow-card;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(90, 79, 207, 0.15);
+  }
+
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: $color-bg-alt; // fond visible si l'image manque
+  }
+
+  &__body { padding: $space-lg; display: flex; flex-direction: column; flex-grow: 1; }
+
+  &__category {
+    color: $color-primary;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__title { margin: $space-xs 0; }
+  &__desc { color: $color-slate; font-size: 0.95rem; margin-bottom: $space-md; }
+
+  // Badges des technologies
+  &__stack {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-xs;
+    margin-bottom: $space-md;
+  }
+
+  &__tech {
+    background-color: $color-bg-alt;
+    color: $color-ink;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+
+  &__links {
+    margin-top: auto; // pousse les liens en bas de la carte
+    display: flex;
+    gap: $space-sm;
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 0.9rem;
+
+    &--code { color: $color-slate; &:hover { color: $color-ink; } }
+  }
+}
+
+// ----- Message quand aucun projet ne correspond au filtre -----
+.projects__empty {
+  text-align: center;
+  color: $color-slate;
+  grid-column: 1 / -1; // occupe toute la largeur de la grille
+}

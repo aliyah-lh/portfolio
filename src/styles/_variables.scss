@@ -1,0 +1,39 @@
+// ============================================================
+// _variables.scss - Toutes les valeurs du design system
+// On définit ici les couleurs, polices et espacements UNE fois,
+// pour les réutiliser partout. Changer une valeur ici = changer
+// partout dans le site. (Voir doc/phase-3 design-system.md)
+// ============================================================
+
+// ===== Couleurs =====
+$color-primary:      #5A4FCF;  // Indigo : couleur signature
+$color-primary-dark: #4A3FB5;  // Indigo foncé : survol
+$color-accent:       #FF6B6B;  // Corail : boutons d'action (CTA)
+$color-success:      #2EC4B6;  // Vert menthe : validations
+
+$color-ink:    #1A1A2E;  // Texte principal (presque noir)
+$color-slate:  #5A5A77;  // Texte secondaire (gris-violet)
+$color-border: #E4E4F0;  // Bordures et séparateurs
+$color-bg-alt: #F8F9FC;  // Fond de section alterné
+$color-bg:     #FFFFFF;  // Fond principal
+
+// ===== Typographie =====
+$font-title: 'Poppins', sans-serif;  // Titres
+$font-body:  'Inter', sans-serif;    // Texte courant
+
+// ===== Espacements (multiples de 8px) =====
+$space-xs: 0.5rem;  // 8px
+$space-sm: 1rem;    // 16px
+$space-md: 1.5rem;  // 24px
+$space-lg: 2rem;    // 32px
+$space-xl: 3rem;    // 48px
+$space-xxl: 4rem;   // 64px
+
+// ===== Divers =====
+$radius: 12px;                                  // Arrondi des coins
+$shadow-card: 0 4px 20px rgba(90, 79, 207, 0.08); // Ombre douce des cartes
+$max-width: 1100px;                             // Largeur max du contenu
+
+// ===== Point de rupture (breakpoint) responsive =====
+$tablet: 768px;
+$desktop: 1024px;
