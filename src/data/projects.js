@@ -19,7 +19,7 @@ export const projects = [
     // Liste des technos affichées sous forme de badges
     stack: ['HTML5', 'Sass', 'CSS3', 'Git', 'GitHub Pages'],
     // Le chemin de l'image (à placer dans public/img/). Voir note plus bas.
-    image: './img/ohmyfood.jpg',
+    image: './img/ohmyfood.webp',
     alt: 'Aperçu du projet Ohmyfood, site responsive intégré en Sass',
     demoUrl: 'https://aliyah-lh.github.io/Project4/',
     codeUrl: 'https://github.com/aliyah-lh/Project4',
@@ -32,7 +32,7 @@ export const projects = [
     description:
       "Front-end d'une application bancaire : authentification par token JWT, gestion de l'état global avec Redux Toolkit, consommation d'une API REST et routes protégées.",
     stack: ['React', 'Redux', 'React Router', 'Vite', 'API REST'],
-    image: './img/argentbank.png',
+    image: './img/argentbank.webp',
     alt: "Aperçu du projet ArgentBank, application React de gestion de compte bancaire",
     demoUrl: '', // pas de démo en ligne (nécessite le back-end) -> on n'affichera pas le bouton
     codeUrl: 'https://github.com/aliyah-lh/argentbank',
