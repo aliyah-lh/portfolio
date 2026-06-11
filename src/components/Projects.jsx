@@ -7,7 +7,6 @@
 //   - on calcule la liste des projets à afficher selon le filtre
 //   - on génère les boutons et les cartes dynamiquement
 //
-// (Le détail est expliqué dans doc/phase-4-developpement/GUIDE-phase-4.md)
 // ============================================================
 
 import { useState } from 'react'

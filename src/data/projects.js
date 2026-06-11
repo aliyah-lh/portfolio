@@ -39,7 +39,3 @@ export const projects = [
   },
 ]
 
-// NOTE : place tes captures d'écran dans portfolio/public/img/
-//   - ohmyfood.png
-//   - argentbank.png
-// Si une image manque, le site fonctionne quand même (juste un cadre vide).

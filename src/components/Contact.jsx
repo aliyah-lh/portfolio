@@ -25,7 +25,7 @@ function Contact() {
             <Mail size={18} aria-hidden="true" /> Email
           </a>
 
-          {/* ⚠️ À MODIFIER : remplace par l'URL de ton vrai profil LinkedIn. */}
+        
           <a className="contact__link" href="https://www.linkedin.com/in/aliyah-lavall%C3%A9e-065839377/?skipRedirect=true" target="_blank" rel="noopener noreferrer">
             <Linkedin size={18} aria-hidden="true" /> LinkedIn
           </a>
